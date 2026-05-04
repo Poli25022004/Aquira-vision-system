@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), #030712 30%, #01050c 100%);
+    color: #e2e8f0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+::selection {
+    background: rgba(56, 189, 248, 0.3);
+    color: #ffffff;
+}
+
+.glass-card {
+    background: rgba(15, 23, 42, 0.82);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    box-shadow: 0 24px 80px -40px rgba(15, 23, 42, 0.8), 0 0 1px rgba(56, 189, 248, 0.15);
+    backdrop-filter: blur(16px);
+}
+
+.glass-card-soft {
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.glass-tab {
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    color: #cbd5e1;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-tab:hover {
+    background: rgba(15, 23, 42, 0.95);
+    color: #ffffff;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+.glass-tab-active {
+    background: rgba(34, 197, 94, 0.14);
+    border-color: rgba(34, 197, 94, 0.35);
+    color: #ffffff;
+    box-shadow: 0 12px 30px -16px rgba(34, 197, 94, 0.28), inset 0 1px 0 rgba(34, 197, 94, 0.2);
+}
+
+@keyframes scan-line {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.animate-scan {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(34, 211, 238, 0.5);
+    box-shadow: 0 0 15px #22d3ee;
+    z-index: 20;
+    animation: scan-line 3s linear infinite;
+}

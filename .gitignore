@@ -1,0 +1,23 @@
+# ── Build C++ ──────────────────────────────
+x64/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.tlog
+*.lastbuildstate
+*.log
+ipch/
+.vs/
+
+# ── Node.js ────────────────────────────────
+node_modules/
+dist/
+.env
+*.local
+
+# ── Sistema ────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
