@@ -3,6 +3,10 @@
 > **Eagle Eye of Quality Control**  
 > *See further. Detect faster. Deliver better.*
 
+## Preview
+
+![AQUIRA Dashboard](docs/dashboard-preview.png)
+
 Aquira è un sistema di visione industriale per il controllo qualità in produzione manifatturiera. L'architettura è ibrida: un backend nativo **C++/OpenCV** acquisisce e trasmette il video dalle telecamere industriali, un **server Node.js** fa da middleware e bus di comunicazione, e un **frontend React** espone la dashboard operativa in tempo reale.
 
 ---
