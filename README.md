@@ -31,29 +31,29 @@ Aquira è un sistema di visione industriale per il controllo qualità in produzi
 ## Architettura generale
 
 ```
-┌─────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────── ─┐
 │                   BROWSER / DASHBOARD                        │
-│             React 19 + Vite  (porta 5173 dev)               │
-│   ┌──────────┐  ┌───────────────┐  ┌─────────────────────┐ │
-│   │ LIVE tab │  │ ANALYTICS tab │  │ SETTINGS tab        │ │
-│   │CameraView│  │AnalyticsPanel │  │ SetupPanel          │ │
-│   └──────────┘  └───────────────┘  └─────────────────────┘ │
+│             React 19 + Vite  (porta 5173 dev)                │
+│   ┌──────────┐  ┌───────────────┐  ┌─────────────────────┐   │
+│   │ LIVE tab │  │ ANALYTICS tab │  │ SETTINGS tab        │   │
+│   │CameraView│  │AnalyticsPanel │  │ SetupPanel          │   │
+│   └──────────┘  └───────────────┘  └─────────────────────┘   │
 │         │ MJPEG stream             │ WebSocket /bus          │
 └─────────┼──────────────────────────┼─────────────────────────┘
           │                          │
           │ proxy /api               │
 ┌─────────▼──────────────────────────▼─────────────────────────┐
-│                  NODE.JS SERVER  (porta 3000)                 │
-│   REST middleware · Central Data Bus ws · MPEG relay ws:8082  │
+│                  NODE.JS SERVER  (porta 3000)                │
+│   REST middleware · Central Data Bus ws · MPEG relay ws:8082 │
 └─────────────────────────────┬────────────────────────────────┘
                               │ HTTP REST + MJPEG
 ┌─────────────────────────────▼────────────────────────────────┐
-│             C++ VISION SYSTEM  (porta 8080)                   │
-│   OpenCV acquisition · httplib HTTP server · broadcaster      │
+│             C++ VISION SYSTEM  (porta 8080)                  │
+│   OpenCV acquisition · httplib HTTP server · broadcaster     │
 │   MJPEG /api/stream/mjpeg · frame grab /api/frame            │
-│               ↕ V4L2 / DirectShow / Camo / EpocCam            │
-│                    TELECAMERA INDUSTRIALE                      │
-│               (Genie Nano-M1920 · webcam · iPhone)            │
+│               ↕ V4L2 / DirectShow / Camo / EpocCam           │
+│                    TELECAMERA INDUSTRIALE                    │
+│               (Genie Nano-M1920 · webcam · iPhone)           │
 └──────────────────────────────────────────────────────────────┘
 ```
 
